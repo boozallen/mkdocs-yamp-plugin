@@ -1,0 +1,55 @@
+site_name: MkDocs Starter
+theme:
+  name: material
+  palette:
+    primary: teal
+  features: 
+    - content.code.annotate
+    - navigation.instant
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+
+edit_uri: edit/main/docs/
+repo_url: https://github.com/boozallen/mkdocs-yamp-plugin
+
+markdown_extensions:
+  - admonition
+  - abbr
+  - footnotes
+  - attr_list
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - toc:
+      permalink: true
+  - pymdownx.snippets:
+      base_path: "docs"
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+plugins:
+  - search: {}
+  - yamp:
+      # delete docs/repos after build||serve?
+      cleanup: false
+      # directory within docs dir to add content
+      temp_dir: "repos"
+      repos:
+        - url: https://github.com/steven-terrana/mkdocs-b
+          branch: develop
+        - url: https://github.com/steven-terrana/mkdocs-a
+
+# Page Tree
+nav:
+  - Home: 
+    - index.md
+    - repos/local-dir/README.md
+  - Concepts:
+    - concepts/index.md
+    - repos/mkdocs-b/README.md
+    - repos/mkdocs-a/docs/concepts/concept.md

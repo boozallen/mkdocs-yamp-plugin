@@ -1,0 +1,50 @@
+[build-system]
+requires = [
+    "hatchling>=1.10.0",
+]
+build-backend = "hatchling.build"
+
+[project]
+name = "mkdocs-yamp"
+description = "Yet Another Multirepo Plugin for MkDocs. Adds additional repositories to a directory within the docs directory to be referenced in the navigation"
+version = "0.1.0"
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=2.7"
+authors = [
+    { name = "Steven Terrana", email = "steventerrana@gmail.com" },
+]
+keywords = [
+    "mkdocs",
+]
+classifiers = [
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.4",
+    "Programming Language :: Python :: 3.5",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+]
+dependencies = [
+    "mkdocs>=1.0.4",
+]
+
+[project.entry-points."mkdocs.plugins"]
+yamp = "yamp.plugin:YAMP"
+
+[project.urls]
+Homepage = "https://github.com/boozallen/mkdocs-yamp-plugin"
+
+[tool.hatch.version]
+path = "yamp/__init__.py"
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/yamp",
+]
+exclude = [
+  '/.github',
+  '/docs'
+]
