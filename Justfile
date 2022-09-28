@@ -46,7 +46,7 @@ release version:
   # publish the release to pypi
   source .pypi.env
   hatch build 
-  hatch release -r test
+  hatch publish -r main
 
   # bump to rc candidate
   git checkout main
