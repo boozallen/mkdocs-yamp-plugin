@@ -1,3 +1,4 @@
 docs/repos
 site/
 dist/
+.pypi.env

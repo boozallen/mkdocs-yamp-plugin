@@ -7,7 +7,6 @@ build-backend = "hatchling.build"
 [project]
 name = "mkdocs-yamp"
 description = "Yet Another Multirepo Plugin for MkDocs. Adds additional repositories to a directory within the docs directory to be referenced in the navigation"
-version = "0.1.0"
 readme = "README.md"
 license = "Apache-2.0"
 requires-python = ">=2.7"

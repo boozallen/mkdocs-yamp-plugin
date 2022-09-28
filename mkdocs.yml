@@ -48,7 +48,6 @@ plugins:
 nav:
   - Home: 
     - index.md
-    - repos/local-dir/README.md
   - Concepts:
     - concepts/index.md
     - repos/mkdocs-b/README.md

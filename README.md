@@ -36,3 +36,25 @@ plugins:
       # a symlink will be created within docs/{temp_dir}
     - path: "../some-other-directory"
 ```
+
+## Example Usage
+
+```yaml
+plugins:
+  - search: {}
+  - yamp:
+      repos:
+        - url: https://github.com/steven-terrana/mkdocs-b
+          branch: develop
+        - url: https://github.com/steven-terrana/mkdocs-a
+
+# Page Tree
+nav:
+  - Home: 
+    - index.md
+    - repos/local-dir/README.md
+  - Concepts:
+    - concepts/index.md
+    - repos/mkdocs-b/README.md
+    - repos/mkdocs-a/docs/concepts/concept.md
+```
