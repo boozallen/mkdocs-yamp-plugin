@@ -54,13 +54,13 @@ class YAMP(BasePlugin[YAMPConfig]):
 
     # registers the plugin to persist a common
     # instance across builds during mkdocs serve
-    def on_startup(self, _command, _dirty):
+    def on_startup(self, command, dirty):
         """
         registers this plugin instance to persist across builds during mkdocs serve
         """
 
     # validates the repo configurations
-    def on_config(self, _config):
+    def on_config(self, config):
         """validates the repo configurations"""
         for repo in self.config.repos:
             try:
@@ -86,7 +86,7 @@ class YAMP(BasePlugin[YAMPConfig]):
 
         self.first_build = False
 
-    def on_pre_page(self, page, _config, _files):
+    def on_pre_page(self, page, config, files):
         """
         Change the page's edit URL if the page came from one of the defined repositories
         """
