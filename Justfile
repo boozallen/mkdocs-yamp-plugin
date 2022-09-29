@@ -38,10 +38,10 @@ release version:
   git push 
 
   # cut a release branch and cut a release tag
-  git checkout -B release/{{version}}
-  git push --set-upstream origin release/{{version}}
-  git tag {{version}}
-  git push origin refs/tags/{{version}}
+  git checkout -B release/$version
+  git push --set-upstream origin release/$version
+  git tag $version
+  git push origin refs/tags/$version
 
   # publish the release to pypi
   source .pypi.env
