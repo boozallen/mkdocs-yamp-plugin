@@ -67,12 +67,14 @@ class YAMP(BasePlugin[YAMPConfig]):
 
   # aggregates documentation
   def on_pre_build(self, config):
+    # the actual directory where we'll add the repositories
+    self._temp_dir = os.path.join(config.docs_dir, self.config.temp_dir)
+
     # wipe temp_dir on first build
     if self.first_build and self.config.start_fresh:
       self.cleanup()
 
     # create repos directory if it doesn't exist
-    self._temp_dir = os.path.join(config.docs_dir, self.config.temp_dir)
     if not os.path.exists(self._temp_dir):
       os.makedirs(self._temp_dir)
     for repo in self.config.repos:
@@ -89,8 +91,8 @@ class YAMP(BasePlugin[YAMPConfig]):
       filtered[0].set_edit_url(page, self.config.temp_dir)
 
   def cleanup(self):
-    if self.config.cleanup:
-      shutil.rmtree(self.basedir)
+    if self.config.cleanup and os.path.exists(self._temp_dir):
+      shutil.rmtree(self._temp_dir)
 
   def on_shutdown(self):
     self.cleanup()
