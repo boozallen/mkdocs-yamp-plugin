@@ -29,6 +29,7 @@ classifiers = [
 ]
 dependencies = [
     "mkdocs>=1.0.4",
+    "GitPython>=3.1.27"
 ]
 
 [project.entry-points."mkdocs.plugins"]
