@@ -1,8 +1,11 @@
 # Yet Another Multirepo Plugin
 
+<div>
 <a href="https://pypi.org/project/mkdocs-yamp/">
   <img src="https://img.shields.io/pypi/v/mkdocs-yamp?color=blue&style=flat-square">
 </a>
+<img alt="PyPI - Downloads" src="https://img.shields.io/pypi/dm/mkdocs-yamp?style=flat-square">
+</div>
 
 This plugin allows users to define external repositories for integration into the MkDocs site.
 
