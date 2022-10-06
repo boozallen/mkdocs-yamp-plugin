@@ -14,6 +14,7 @@ limitations under the License.
 import os
 import shutil
 import logging
+import git
 
 from mkdocs.plugins import BasePlugin
 from mkdocs.config.base import Config
@@ -101,7 +102,7 @@ class YAMP(BasePlugin[YAMPConfig]):
     def cleanup(self):
         """deletes the temporary directory where repos are aggregated"""
         if self.config.cleanup and os.path.exists(self._temp_dir):
-            shutil.rmtree(self._temp_dir)
+            git.rmtree(self._temp_dir)
 
     def on_shutdown(self):
         """cleanup at the end of the mkdocs invocation"""
