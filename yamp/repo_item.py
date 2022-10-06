@@ -75,7 +75,7 @@ class RepoItem(Config):
 
         if os.path.exists(r_path):
             # # do a git pull
-            self.log.info(f'git pull {self.url}')
+            log.info(f'git pull {self.url}')
             # r = Repo(r_path)
             # r.remotes.origin.pull()
         else:
